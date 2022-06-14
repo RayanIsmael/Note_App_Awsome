@@ -27,7 +27,7 @@ class _CreateNoteState extends State<CreateNote> {
       return Scaffold(
         backgroundColor: controller.mycolor.hexToColor2(),
         appBar: AppBar(
-          title: const Text('Edite Note'),
+          title: const Text('Create Note'),
           centerTitle: true,
           elevation: 0,
           backgroundColor: controller.mycolor.hexToColor2(),
@@ -56,7 +56,7 @@ class _CreateNoteState extends State<CreateNote> {
               );
               controller.createNote(note: note);
             } else {
-              print("Error");
+              //print("Error");
             }
           },
           child: Icon(

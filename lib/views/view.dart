@@ -59,7 +59,7 @@ class _ViewPageState extends State<ViewPage> {
               );
               controller.updateNote(index: controller.myIndex, note: newnote);
             } else {
-              print("Error");
+              // print("Error");
             }
           },
           child: Icon(
@@ -79,7 +79,6 @@ class _ViewPageState extends State<ViewPage> {
         mainAxisSize: MainAxisSize.min,
         children: [
           TextFormField(
-            style: const TextStyle(fontSize: 20, color: Colors.white),
             controller: titleController,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (value) {
@@ -102,7 +101,6 @@ class _ViewPageState extends State<ViewPage> {
             height: 10,
           ),
           TextFormField(
-            style: const TextStyle(fontSize: 20, color: Colors.white),
             controller: noteController,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (value) {

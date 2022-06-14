@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/controller/note_controller.dart';
 import 'package:flutter_application_2/model/note.dart';
 import 'package:flutter_application_2/views/create_note.dart';
+import 'package:flutter_application_2/views/search_page.dart';
 import 'package:flutter_application_2/views/view.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
@@ -25,6 +26,14 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.grey[700],
+        actions: [
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: MySearch());
+            },
+            icon: Icon(Icons.search),
+          )
+        ],
       ),
       //-----------------------
       body: GetBuilder<NotesController>(builder: (controller) {
@@ -76,15 +85,27 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(note.title),
+                    Flexible(
+                      flex: 2,
+                      child: Text(note.title,
+                          style: TextStyle(
+                              fontSize: 16.5,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.center),
+                    ),
                   ],
                 ),
-                Spacer(flex: 5),
+                Spacer(flex: 4),
                 Flexible(
-                  flex: 5,
+                  flex: 3,
                   child: Text(
                     note.note,
-                    //overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontSize: 14.5,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 Spacer(flex: 2),
